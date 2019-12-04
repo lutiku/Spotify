@@ -132,3 +132,40 @@ getTracksData()
 
 
 
+/* User_data*/
+
+/*
+function getUserData() {
+    const xhrUserData = new XMLHttpRequest()
+    xhrUserData.onreadystatechange = function () {
+        if (xhrUserData.readyState === 4) {
+            const data = JSON.parse(xhrUserData.responseText)
+            console.log(data)
+
+            const preview = data.preview_url
+            console.log(preview)
+
+
+
+        }
+
+    }
+
+
+    xhrUserData.open('GET', '')
+
+
+    xhrUserData.send()
+
+}
+
+getUserData()*/
+
+
+
+
+
+
+
+
+
