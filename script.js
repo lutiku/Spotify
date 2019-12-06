@@ -5,7 +5,7 @@ function getApiData() {
             const data = JSON.parse(xhr.responseText)
             console.log(data)
 
-            const artist = data.items[0].artists[1].name
+            const artist = data.items[0].artists[0].name
 
 
             const artistSecond = data.items[0].artists[0].name
@@ -55,6 +55,7 @@ function getApiData() {
 
 
 
+
             } /*fin boucle*/
 
             /*Boucle for qui récupère le titre des chansons*/
@@ -69,7 +70,7 @@ function getApiData() {
 
                 console.log(single_name)
 
-                /*document.querySelector('.img'+[n]+' p').innerHTML = single_name*/
+
 
 
 
@@ -86,7 +87,7 @@ function getApiData() {
 
 
 
-    xhr.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/albums?include_groups=single&market=ES&limit=10&offset=5')
+    xhr.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/albums?include_groups=single&market=FR&limit=17')
 
 
     xhr.send()
@@ -109,8 +110,17 @@ function getTracksData() {
             const data = JSON.parse(xhrTracksData.responseText)
             console.log(data)
 
-            const preview = data.preview_url
-            console.log(preview)
+
+
+            for(i=0 ; i<5 ; i++) {
+
+                const tracks = data.tracks[i].name
+                console.log(tracks)
+
+                document.querySelector('.tracks'+[i]).innerHTML = tracks
+
+
+            }
 
 
 
@@ -119,7 +129,7 @@ function getTracksData() {
     }
 
 
-    xhrTracksData.open('GET', 'https://api.spotify.com/v1/tracks/5TTZ0fMZVLLseFk7NC6NRz?market=FR')
+    xhrTracksData.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/top-tracks?country=ES')
 
 
     xhrTracksData.send()

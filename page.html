@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Public+Sans|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
 
     <title>Document</title>
 </head>
@@ -36,18 +37,36 @@
 
 
 
+
     </section>
 
     <section class="Albums">
         <h2>Populaires</h2>
 
+        <div class="tracks">
         <iframe src="https://open.spotify.com/embed/track/5TTZ0fMZVLLseFk7NC6NRz" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="tracks0">fjdhkhsku</p>
+        </div>
+
+        <div class="tracks">
         <iframe src="https://open.spotify.com/embed/track/1OxL1FWSEd7QmJoWLRP2NO" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="tracks1">hbsdbcsbh</p>
+        </div>
+
+        <div class="tracks">
         <iframe src="https://open.spotify.com/embed/track/2Ak3g9JjqjhRb0lE22778S" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="tracks2">hbsdbcsbh</p>
+        </div>
+
+        <div class="tracks">
         <iframe src="https://open.spotify.com/embed/track/1WoFHc2I0OthSDzo8YvVof" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <p class="tracks3">hbsdbcsbh</p>
+        </div>
+
+        <div class="tracks">
         <iframe src="https://open.spotify.com/embed/track/1bg2n3PPh1LyMOHlbO7NEx" width="80" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-
+        <p class="tracks4">hbsdbcsbh</p>
+        </div>
 
 
 
@@ -60,73 +79,85 @@
 
 
         <div class="image_single img0">
-            <p>
-
-            </p>
+            <p> dgsjhbhskuuhygsygsu</p>
         </div>
 
 
         <div class="image_single img1">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
 
         <div class="image_single img2">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img3">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img4">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img5">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img6">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img7">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img8">
-            <p>
-
-            </p>
+            <p></p>
         </div>
 
 
         <div class="image_single img9">
-            <p>
+            <p></p>
+        </div>
 
-            </p>
+        <div class="image_single img10">
+            <p></p>
+        </div>
+
+        <div class="image_single img11">
+            <p></p>
+        </div>
+
+        <a href="#" id="toggler">Voir plus</a>
+        <div id="toggle">
+
+            <div class="image_single img12">
+                <p></p>
+            </div>
+
+            <div class="image_single img13">
+                <p></p>
+            </div>
+
+            <div class="image_single img14">
+                <p></p>
+            </div>
+
+            <div class="image_single img15">
+                <p></p>
+            </div>
+
+            <div class="image_single img16">
+                <p></p>
+            </div>
         </div>
 
 
@@ -142,6 +173,20 @@
 
 </div>
 <footer>
+</br></br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
 
 </footer>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -149,5 +194,30 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <script src="script.js"></script>
+<script>
+    /* <![CDATA[ */
+    /*
+    |-----------------------------------------------------------------------
+    |  jQuery Toggle Script by Matt - skyminds.net
+    |-----------------------------------------------------------------------
+    |
+    | Affiche/cache le contenu d'un bloc une fois qu'un lien est cliqué.
+    |
+    */
+
+    // On attend que la page soit chargée
+    jQuery(document).ready(function()
+    {
+        // On cache la zone de texte
+        jQuery('#toggle').hide();
+        // toggle() lorsque le lien avec l'ID #toggler est cliqué
+        jQuery('a#toggler').click(function()
+        {
+            jQuery('#toggle').toggle(400);
+            return false;
+        });
+    });
+    /* ]]> */
+</script>
 </body>
 </html>

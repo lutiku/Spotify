@@ -33,9 +33,9 @@ nav
 
 main
 {
-    /*background-color: green*/;
+    /*background-color: green;*/
     width:84%;
-    height:1000px;
+    height:100%;
     margin-left: 16%;
 
 
@@ -150,8 +150,8 @@ h2
 
 .image_single /*div qui contient les images*/
 {
-    width: 16%;
-    height:42%;
+    width: 12%;
+    height:38%;
     /*background-color: pink;*/
 
     margin-top: 5%;
@@ -164,6 +164,42 @@ iframe
 {
     margin-left:5%;
 }
+
+.tracks
+{
+
+    display: flex;
+}
+.tracks p
+{
+    margin-top: 26px;
+    margin-left: 10px;
+    /*font-family: Roboto;*/
+    color: white;
+    opacity: 75.0%;
+}
+
+#toggle
+{
+    display: flex;
+    /*background-color: orange;*/
+    width: 84%;
+    height: 350px;
+
+}
+
+a#toggler
+{
+
+    /*background-color: red;*/
+    height: 10px;
+    margin-top: 11%;
+    margin-left: 8px;
+    color: white;
+    font-family: 'Public Sans', sans-serif;
+
+}
+
 
 
 
