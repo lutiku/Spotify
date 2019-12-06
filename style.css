@@ -9,12 +9,15 @@ body
     background-color: #121212;
 
 
+
 }
 .body
 {
 
 
     display: flex;
+
+
 
 }
 
@@ -106,9 +109,14 @@ img
 .background_img
 {
    /* background-color: red;*/
+
+
 }
 
-.Albums
+
+
+
+.popularTracks, .albums
 {
 
     width: 100%;
@@ -118,6 +126,17 @@ img
     flex-direction: column ;
     justify-content: space-around;
 }
+
+.albums
+{
+    /*background-color: red;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
 
 .Section_single_Eps
 {
@@ -200,7 +219,38 @@ a#toggler
 
 }
 
+.container {
+    margin: 1em;
+}
 
+img {
+    margin-bottom: 1em;
+}
+
+.title
+{
+   /* background-color: red;*/
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+.title0, .title1, .title2, .title3, .title4, .title5
+{
+    display: flex;
+    flex-wrap: wrap;
+    /*background-color: yellow;*/
+    padding: 9px;
+    font-size: 15px;
+}
+/*
+.image_JoSm
+{
+    background-color: indigo;
+    height: 85%;
+    width: 35%;
+}*/
 
 
 

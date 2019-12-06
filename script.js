@@ -39,7 +39,7 @@ function getApiData() {
             }
 */
 
-            /*Boucle qui récupère Les images de taille moyenne + insertion image caroussel*/
+            /*Boucle qui récupère Les images de taille moyenne + titre des chansons qui corespond à chaque image*/
 
             const nbitems_moyen = data.items.length
 
@@ -49,16 +49,18 @@ function getApiData() {
                 console.log(nbimages_moyen)
 
 
-                document.querySelector('.img'+[i]).innerHTML = '<img src='+nbimages_moyen+'  alt="image_single">'
+                const single_name = data.items[i].name
+                console.log(single_name)
 
 
+                document.querySelector('.img'+[i]).innerHTML = '<img src='+nbimages_moyen+'  alt="image_single" title='+single_name+'>'
 
 
 
 
             } /*fin boucle*/
 
-            /*Boucle for qui récupère le titre des chansons*/
+            /*Boucle for qui récupère le titre des chansons
             const nbitems_name = data.items.length
 
             for(let n=0; n< nbitems_name ; n++) {
@@ -69,14 +71,10 @@ function getApiData() {
 
 
                 console.log(single_name)
+                document.querySelector('.title'+[n]).innerHTML = single_name
 
 
-
-
-
-
-
-            }/*Fin boucle*/
+            }Fin boucle*/
 
 
 
@@ -100,7 +98,7 @@ getApiData()
 
 
 
-/*Récupérer la musique*/
+/*Récupérer le titre des tracks  */
 
 
 function getTracksData() {
@@ -122,14 +120,11 @@ function getTracksData() {
 
             }
 
-
-
         }
-
     }
 
 
-    xhrTracksData.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/top-tracks?country=ES')
+    xhrTracksData.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/top-tracks?country=FR')
 
 
     xhrTracksData.send()
@@ -142,34 +137,46 @@ getTracksData()
 
 
 
-/* User_data*/
+/* Artist_data*/
 
-/*
-function getUserData() {
-    const xhrUserData = new XMLHttpRequest()
-    xhrUserData.onreadystatechange = function () {
-        if (xhrUserData.readyState === 4) {
-            const data = JSON.parse(xhrUserData.responseText)
+function getTracksData() {
+    const xhrTracksData = new XMLHttpRequest()
+    xhrTracksData.onreadystatechange = function () {
+        if (xhrTracksData.readyState === 4) {
+            const data = JSON.parse(xhrTracksData.responseText)
             console.log(data)
 
-            const preview = data.preview_url
-            console.log(preview)
+            const img = data.images[1].url
+            console.log(img)
 
 
+
+
+
+
+
+            /*for(i=0 ; i<5 ; i++) {
+
+                const tracks = data.tracks[i].name
+                console.log(tracks)
+
+                document.querySelector('.tracks'+[i]).innerHTML = tracks
+
+
+            }*/
 
         }
-
     }
 
 
-    xhrUserData.open('GET', '')
+    xhrTracksData.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd')
 
 
-    xhrUserData.send()
+    xhrTracksData.send()
 
 }
 
-getUserData()*/
+getTracksData()
 
 
 
