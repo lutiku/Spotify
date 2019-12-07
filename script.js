@@ -137,7 +137,7 @@ getTracksData()
 
 
 
-/* Artist_data*/
+/* ______________Artist_data*____________________________________*/
 
 function getTracksData() {
     const xhrTracksData = new XMLHttpRequest()
@@ -155,7 +155,7 @@ function getTracksData() {
 
 
 
-            /*for(i=0 ; i<5 ; i++) {
+            for(i=0 ; i<5 ; i++) {
 
                 const tracks = data.tracks[i].name
                 console.log(tracks)
@@ -163,7 +163,7 @@ function getTracksData() {
                 document.querySelector('.tracks'+[i]).innerHTML = tracks
 
 
-            }*/
+            }
 
         }
     }
@@ -177,6 +177,117 @@ function getTracksData() {
 }
 
 getTracksData()
+
+
+
+/*__________________________________SEARCH___________________________*/
+
+
+function getTracksData() {
+    const xhrTracksData = new XMLHttpRequest()
+    xhrTracksData.onreadystatechange = function () {
+        if (xhrTracksData.readyState === 4) {
+            const data = JSON.parse(xhrTracksData.responseText)
+            console.log(data)
+
+            const img = data.images[1].url
+            console.log(img)
+
+
+
+
+
+
+
+            for(i=0 ; i<5 ; i++) {
+
+                const tracks = data.tracks[i].name
+                console.log(tracks)
+
+                document.querySelector('.tracks'+[i]).innerHTML = tracks
+
+
+            }
+
+        }
+    }
+
+
+    xhrTracksData.open('GET', 'https://api.spotify.com/v1/search?q='+artist+'&type=artist')
+
+
+    xhrTracksData.send()
+
+}
+
+getTracksData()
+
+
+/*_______________________________________CAROUSSEL_________________________*/
+
+
+function moveToSelected(element)
+{
+    if (element == "next") {
+        var selected = $(".selected").next();
+    }
+    else if (element == "prev")
+    {
+        var selected = $(".selected").prev();
+    }
+    else
+    {
+        var selected = element;
+    }
+
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+
+    $(selected).removeClass().addClass("selected");
+
+    $(prev).removeClass().addClass("prev");
+    $(next).removeClass().addClass("next");
+
+    $(nextSecond).removeClass().addClass("nextRightSecond");
+    $(prevSecond).removeClass().addClass("prevLeftSecond");
+
+    $(nextSecond).nextAll().removeClass().addClass('hideRight');
+    $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+
+}
+
+// Eventos teclado
+$(document).keydown(function(e)
+{
+    switch(e.which)
+    {
+        case 37: // left
+            moveToSelected('prev');
+            break;
+
+        case 39: // right
+            moveToSelected('next');
+            break;
+
+        default: return;
+    }
+    e.preventDefault();
+});
+
+$('#carousel div').click(function() {
+    moveToSelected($(this));
+});
+
+$('#prev').click(function() {
+    moveToSelected('prev');
+});
+
+$('#next').click(function() {
+    moveToSelected('next');
+});
+
 
 
 
