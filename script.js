@@ -138,7 +138,7 @@ getTracksData()
 
 
 /* ______________Artist_data*____________________________________*/
-
+/*
 function getTracksData() {
     const xhrTracksData = new XMLHttpRequest()
     xhrTracksData.onreadystatechange = function () {
@@ -148,9 +148,6 @@ function getTracksData() {
 
             const img = data.images[1].url
             console.log(img)
-
-
-
 
 
 
@@ -180,47 +177,7 @@ getTracksData()
 
 
 
-/*__________________________________SEARCH___________________________*/
-
-
-function getTracksData() {
-    const xhrTracksData = new XMLHttpRequest()
-    xhrTracksData.onreadystatechange = function () {
-        if (xhrTracksData.readyState === 4) {
-            const data = JSON.parse(xhrTracksData.responseText)
-            console.log(data)
-
-            const img = data.images[1].url
-            console.log(img)
-
-
-
-
-
-
-
-            for(i=0 ; i<5 ; i++) {
-
-                const tracks = data.tracks[i].name
-                console.log(tracks)
-
-                document.querySelector('.tracks'+[i]).innerHTML = tracks
-
-
-            }
-
-        }
-    }
-
-
-    xhrTracksData.open('GET', 'https://api.spotify.com/v1/search?q='+artist+'&type=artist')
-
-
-    xhrTracksData.send()
-
-}
-
-getTracksData()
+*/
 
 
 /*_______________________________________CAROUSSEL_________________________*/
