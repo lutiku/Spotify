@@ -1,16 +1,89 @@
 
-* {
+body{
     margin: 0;
-    padding: 0;
 }
-
-body
+.container
 {
     background-color: #121212;
+    margin: 0;
+
+
+}
+
+.col-sm-12{
+
+    border: 5px solid black;
+    width: auto;
+    height: 100px;
+    padding: 11px;
+    box-shadow: #ffffff;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    color: #ffffff;
+    width: 100px;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Public Sans', sans-serif;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #000000;
+    width: 100px;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #ffffff;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 40px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
 
 
 
+ul {
+    list-style-type: none;
+    margin-left: 290px;
+    text-align: center;
+    overflow: hidden;
+}
 
+li {
+    float: left;
 }
 .body
 {
@@ -393,6 +466,11 @@ img {
 }
 .h1{
     color: white;
+}
+.ytb{
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
 }
 form{
     margin-top: 20px;
