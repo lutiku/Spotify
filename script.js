@@ -1,3 +1,8 @@
+
+
+
+
+/*_______________________________________*/
 function getApiData() {
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function () {
@@ -53,14 +58,14 @@ function getApiData() {
                 console.log(single_name)
 
 
-                document.querySelector('.img'+[i]).innerHTML = '<img src='+nbimages_moyen+'  alt="image_single" title='+single_name+'>'
+                document.querySelector('.img'+[i]).innerHTML = '<img src='+nbimages_moyen+'  alt="image_single">'
 
 
 
 
             } /*fin boucle*/
 
-            /*Boucle for qui récupère le titre des chansons
+            /*Boucle for qui récupère le titre des chansons*/
             const nbitems_name = data.items.length
 
             for(let n=0; n< nbitems_name ; n++) {
@@ -74,7 +79,7 @@ function getApiData() {
                 document.querySelector('.title'+[n]).innerHTML = single_name
 
 
-            }Fin boucle*/
+            }/*Fin boucle*/
 
 
 
@@ -85,7 +90,7 @@ function getApiData() {
 
 
 
-    xhr.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/albums?include_groups=single&market=FR&limit=17')
+    xhr.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/albums?include_groups=single&scopes=&market=FR&limit=17')
 
 
     xhr.send()
@@ -181,7 +186,7 @@ getTracksData()
 
 
 /*_______________________________________CAROUSSEL_________________________*/
-
+/*
 
 function moveToSelected(element)
 {
@@ -244,6 +249,57 @@ $('#prev').click(function() {
 $('#next').click(function() {
     moveToSelected('next');
 });
+
+*/
+/*____________________________________SEARCH___________________*/
+
+
+/*
+
+function getSearchData() {
+    const xhrSearchData = new XMLHttpRequest()
+    xhrSearchData.onreadystatechange = function () {
+        if (xhrSearchData.readyState === 4) {
+            const data = JSON.parse(xhrSearchData.responseText)
+            console.log(data)
+
+
+
+
+
+
+
+
+
+        }
+    }
+
+    function search() {
+        const artist = document.getElementById("artist").value;
+        console.log(artist);
+    }
+
+    xhrSearchData.open('GET', 'https://api.spotify.com/v1/search?q='+artist+'&type=artist')
+
+
+    xhrSearchData.send()
+
+}
+
+getSearchData()*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

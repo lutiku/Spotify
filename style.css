@@ -233,12 +233,20 @@ img {
 
 .title
 {
-   /* background-color: red;*/
+    /*background-color: red;*/
     display: flex;
     height: 20px;
     justify-content: space-between;
     margin-left: 40px;
 }
+
+/*.title_second
+{
+
+    display: flex;
+    margin-top: 20%;
+    height: 80px;
+}*/
 
 .title0, .title1, .title2, .title3, .title4, .title5
 {
