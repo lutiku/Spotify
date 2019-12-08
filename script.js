@@ -1,23 +1,35 @@
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
+
+
+
+
+
+
+
+
+
 function getApiData() {
     const xhr = new XMLHttpRequest()
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             const data = JSON.parse(xhr.responseText)
             console.log(data)
-
             const artist = data.items[0].artists[1].name
-
 
             const artistSecond = data.items[0].artists[0].name
 
-
             const artists = artist+' feat '+artistSecond
-            console.log(artists)
-
-
-
-            const date= data.items[0].release_date
-            console.log(date)
+            //console.log(artists)
+            const date = data.items[0].release_date
+            //console.log(date)
 
 
             /*Boucle for qui récupère toutes les images*/
@@ -46,7 +58,7 @@ function getApiData() {
             for(let i=0; i< nbitems_moyen ; i++)
             {
                 const nbimages_moyen = data.items[i].images[1].url
-                console.log(nbimages_moyen)
+                //console.log(nbimages_moyen)
 
 
                 document.querySelector('.img'+[i]).innerHTML = '<img src='+nbimages_moyen+'  alt="image_single">'
@@ -67,7 +79,7 @@ function getApiData() {
                 const single_name = data.items[n].name
 
 
-                console.log(single_name)
+                //console.log(single_name)
 
                 /*document.querySelector('.img'+[n]+' p').innerHTML = single_name*/
 
@@ -84,24 +96,34 @@ function getApiData() {
     }
 
 
+    xhr.open('GET', 'https://api.spotify.com/v1/artists/1917cb5b839204cf0864a013877f20ac/albums?include_groups=single&market=ES&limit=10&offset=5')
 
 
-    xhr.open('GET', 'https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd/albums?include_groups=single&market=ES&limit=10&offset=5')
-
-
-    xhr.send()
+  //  xhr.send()
 }
 
 
 
 getApiData()
 
+/*
+    SC.initialize({
+        client_id: 'YOUR_CLIENT_ID',
+        redirect_uri: 'https://example.com/callback'
+    });
 
+// initiate auth popup
+
+SC.connect().then(function() {
+    return SC.get('/me');
+}).then(function(me) {
+    alert('Hello, ' + me.username);
+})
 
 
 /*Récupérer la musique*/
 
-
+/*
 function getTracksData() {
     const xhrTracksData = new XMLHttpRequest()
     xhrTracksData.onreadystatechange = function () {
@@ -120,6 +142,7 @@ function getTracksData() {
 
 
     xhrTracksData.open('GET', 'https://api.spotify.com/v1/tracks/5TTZ0fMZVLLseFk7NC6NRz?market=FR')
+
 
 
     xhrTracksData.send()
