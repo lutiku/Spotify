@@ -378,4 +378,42 @@ img {
     color:#fff;
 }
 
+.header{
+    margin-top: 30px;
+    color: lightblue;
+}
 
+.header a{
+    color: black;
+    text-decoration: none;
+}
+
+.header a:hover{
+    text-decoration: none;
+}
+.h1{
+    color: white;
+}
+form{
+    margin-top: 20px;
+}
+
+form, #results {
+    padding: 0 20px;
+}
+
+.item{
+    margin-bottom: 25px;
+}
+
+.w100{
+    width: 100%;
+}
+
+.btn-primary{
+    background-color: antiquewhite;
+    border-color: #fa8aa3;
+}
+.btn-primary:hover,btn-primary:active, btn-primary:focus{
+    background-color: red;
+}

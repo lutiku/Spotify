@@ -290,6 +290,50 @@ getSearchData()*/
 
 
 
+// API YOUTUBE
+
+var GoogleAuth; // Google Auth object.
+function initClient() {
+    gapi.client.init({
+        'apiKey': 'AIzaSyDnqB0BPgDul4yHWQIiJNkW4Ok4uQ5O4DA',
+        'clientId': '52353213905-n4vgqaoi94rqkmb2mrvvu2s8eld5enk1.apps.googleusercontent.com',
+        'scope': 'https://www.googleapis.com/auth/youtube.force-ssl',
+        'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest']
+    }).then(function () {
+        GoogleAuth = gapi.auth2.getAuthInstance();
+
+        // Listen for sign-in state changes.
+        GoogleAuth.isSignedIn.listen(updateSigninStatus);
+    });
+}
+function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
+        .then(function() { console.log("Sign-in successful"); },
+            function(err) { console.error("Error signing in", err); });
+}
+function loadClient() {
+    gapi.client.setApiKey("AIzaSyDnqB0BPgDul4yHWQIiJNkW4Ok4uQ5O4DA");
+    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+            function(err) { console.error("Error loading GAPI client for API", err); });
+}
+// Make sure the client is loaded and sign-in is complete before calling this method.
+function execute() {
+    return gapi.client.youtube.videos.list({
+        "part": "snippet,contentDetails,statistics",
+        "chart": "mostPopular",
+        "regionCode": "US"
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+            },
+            function(err) { console.error("Execute error", err); });
+}
+gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "52353213905-n4vgqaoi94rqkmb2mrvvu2s8eld5enk1.apps.googleusercontent.com"});
+});
 
 
 
@@ -297,6 +341,84 @@ getSearchData()*/
 
 
 
+/*
+
+// The client ID is obtained from the {{ Google Cloud Console }}
+// at {{ https://cloud.google.com/console }}.
+// If you run this code from a server other than http://localhost,
+// you need to register your own client ID.
+var OAUTH2_CLIENT_ID = 'AIzaSyDnqB0BPgDul4yHWQIiJNkW4Ok4uQ5O4DA';
+var OAUTH2_SCOPES = [
+    'https://www.googleapis.com/auth/youtube'
+];
+
+// Upon loading, the Google APIs JS client automatically invokes this callback.
+googleApiClientReady = function() {
+    gapi.auth.init(function() {
+        window.setTimeout(checkAuth, 1);
+    });
+}
+
+// Attempt the immediate OAuth 2.0 client flow as soon as the page loads.
+// If the currently logged-in Google Account has previously authorized
+// the client specified as the OAUTH2_CLIENT_ID, then the authorization
+// succeeds with no user intervention. Otherwise, it fails and the
+// user interface that prompts for authorization needs to display.
+function checkAuth() {
+    gapi.auth.authorize({
+        client_id: AIzaSyDnqB0BPgDul4yHWQIiJNkW4Ok4uQ5O4DA,
+        scope: OAUTH2_SCOPES,
+        immediate: true
+    }, handleAuthResult);
+}
+
+// Handle the result of a gapi.auth.authorize() call.
+function handleAuthResult(authResult) {
+    if (authResult && !authResult.error) {
+        // Authorization was successful. Hide authorization prompts and show
+        // content that should be visible after authorization succeeds.
+        $('.pre-auth').hide();
+        $('.post-auth').show();
+        loadAPIClientInterfaces();
+    } else {
+        // Make the #login-link clickable. Attempt a non-immediate OAuth 2.0
+        // client flow. The current function is called when that flow completes.
+        $('#login-link').click(function() {
+            gapi.auth.authorize({
+                client_id: AIzaSyDnqB0BPgDul4yHWQIiJNkW4Ok4uQ5O4DA,
+                scope: OAUTH2_SCOPES,
+                immediate: false
+            }, handleAuthResult);
+        });
+    }
+}
+
+// Load the client interfaces for the YouTube Analytics and Data APIs, which
+// are required to use the Google APIs JS client. More info is available at
+// https://developers.google.com/api-client-library/javascript/dev/dev_jscript#loading-the-client-library-and-the-api
+function loadAPIClientInterfaces() {
+    gapi.client.load('youtube', 'v3', function() {
+        handleAPILoaded();
+    });
+}
+
+function searchByTopic() {
+    var mid = '/m/0gjf126';
+    var results = YouTube.Search.list('id,snippet', {topicId: mid, maxResults: 25});
+    for(var i in results.items) {
+        var item = results.items[i];
+        Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+    }
+}
+
+function init (){
+    gapi.client.setApiKey("AIzaSyDnqB0BPgDul4yHWQIiJNkW4Ok4uQ5O4DA")
+    gapi.client.load("youtube", "V3", function (){
+        // api ready
+    })
+}
+
+*/
 
 
 
