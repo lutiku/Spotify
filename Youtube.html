@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Public+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <span style="color:#f1f1f1;font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+                <div id="myNav" class="overlay">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="overlay-content">
+                        <a href="#">Accueil</a>
+                        <a href="#">Recherche</a>
+                        <a href="#">Ma Bibliothèque</a>
+                    </div>
+                </div>
+
+                <ul class="menu">
+                    <li><a class="active" onclick="window.location.href = 'http://localhost:63342/API-Spotify/Spotify/index.html?_ijt=tmc2si2014t9nor3vta2jv64bp#soundclouf '; href="#spotify">Spotify</a></li>
+                    <li><a onclick="window.location.href = 'http://localhost:63342/API-Spotify/Spotify/Soundcloud.html?_ijt=vef8ot9ja8sjgdqstlr9khsru5';" href="#soundclouf">Soundcloud</a></li>
+                    <li><a onclick="window.location.href = 'http://localhost:63342/API-Spotify/Spotify/Mabiblotheque.html?_ijt=vef8ot9ja8sjgdqstlr9khsru5';" href="#mabibliothèque">Ma Bibliothèque</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="script.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+</body>
+</html>

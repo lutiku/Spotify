@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 * {
 
 }
@@ -17,65 +18,48 @@ body{
 .col-sm-12{
 
     border: 2px solid rgba(255, 255, 255, 0);
+=======
+
+.container
+{
+    background-color: lightcyan;
+    margin: 0;
+    height: 400px;
+>>>>>>> Stashed changes
     width: auto;
+}
+
+
+}
+<<<<<<< Updated upstream
+=======
+.row{
+    background-color: #fa8aa3;
     height: 100px;
-    padding: 11px;
-    box-shadow: #ffffff;
+    width: auto;
 }
 
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    background-color: rgba(255, 255, 255, 0.9);
-    overflow-x: hidden;
-    transition: 0.5s;
-
+.col-sm{
+    color: #b3b3b3;
+    width: 50px;
+    height: 200%;
 }
 
-.overlay-content {
-    position: relative;
-    top: 25%;
-    color: #ffffff;
-    width: 100px;
-    text-align: center;
-    margin-top: 30px;
-    font-family: 'Public Sans', sans-serif;
-}
 
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #000000;
-    width: 100px;
-    display: block;
-    transition: 0.3s;
-}
 
-.overlay a:hover, .overlay a:focus {
-    color: #ffffff;
-}
+nav
+{
+    width:16% ;
+    height:1000px ;
+    background-color: #000000;
+    opacity: 80.0% ;
+    position : fixed;
+    margin-top: 0;
 
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 40px;
-}
 
-@media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
+
 }
+>>>>>>> Stashed changes
 
 main
 {
@@ -211,3 +195,167 @@ iframe
 
 
 
+<<<<<<< Updated upstream
+=======
+.title
+{
+    /*background-color: red;*/
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+/*.title_second
+{
+
+    display: flex;
+    margin-top: 20%;
+    height: 80px;
+}*/
+
+.title0, .title1, .title2, .title3, .title4, .title5
+{
+    display: flex;
+    flex-wrap: wrap;
+    /*background-color: yellow;*/
+    padding: 9px;
+    font-size: 15px;
+}
+/*
+.image_JoSm
+{
+    background-color: indigo;
+    height: 85%;
+    width: 35%;
+}*/
+
+/****_______________________________________Caroussel___________________________*/
+
+
+#carousel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+   /* background-color: yellow;*/
+    margin-top: 12%;
+
+
+}
+#carousel div {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+}
+#carousel div img {
+    width: 400px;
+    transition: width 1s;
+}
+#carousel div.hideLeft {
+    left: 0%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+}
+#carousel div.hideLeft img {
+    width: 200px;
+}
+#carousel div.hideRight {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+}
+#carousel div.hideRight img {
+    width: 200px;
+}
+#carousel div.prev {
+    z-index: 5;
+    left: 30%;
+    transform: translateY(50px) translateX(-50%);
+}
+#carousel div.prev img {
+    width: 300px;
+}
+#carousel div.prevLeftSecond {
+    z-index: 4;
+    left: 15%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+}
+#carousel div.prevLeftSecond img {
+    width: 200px;
+}
+#carousel div.selected {
+    z-index: 10;
+    left: 50%;
+    transform: translateY(0px) translateX(-50%);
+}
+#carousel div.next {
+    z-index: 5;
+    left: 70%;
+    transform: translateY(50px) translateX(-50%);
+}
+#carousel div.next img {
+    width: 300px;
+}
+#carousel div.nextRightSecond {
+    z-index: 4;
+    left: 85%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+}
+#carousel div.nextRightSecond img {
+    width: 200px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 12%;
+    /*background-color: white;*/
+
+
+
+}
+
+#prev,#next
+{
+
+    border-color: #1db954;
+    border-radius: 30px;
+    width: 130px;
+    height: 40px;
+    font-family: 'Public Sans', sans-serif;
+
+    font-size: small;
+
+}
+
+#next
+{
+    margin-left: 20px;
+    background-color: transparent;
+    color:#1db954 ;
+
+}
+
+#prev
+{
+    background-color: #1db954;
+    color:#fff;
+}
+
+.header{
+    margin-top: 30px;
+    color: lightblue;
+}
+
+.header a{
+    color: black;
+    text-decoration: none;
+}
+
+.header a:hover{
+    text-decoration: none;
+}
+
+>>>>>>> Stashed changes
